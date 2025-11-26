@@ -1,0 +1,22 @@
+.locationInfoCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	border: 1px solid #fff;
+	gap: 10px;
+	padding: 20px;
+	color: #fff;
+}
+
+.locationInfoCard div {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.locationInfoCard p {
+	margin: 0;
+	font-size: 16px;
+}

@@ -1,0 +1,10 @@
+.wrapperMap {
+	display: grid;
+	grid-template-columns: 35% 1fr;
+	gap: 15px;
+	max-height: 500px;
+}
+
+body {
+	background-color: #504f4f;
+}

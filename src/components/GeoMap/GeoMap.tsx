@@ -1,12 +1,14 @@
 import { Map, Placemark, useYMaps } from '@pbe/react-yandex-maps'
 import { useState } from 'react'
 import { foundGeo } from '../../helpers/foundGeo'
+import { LocationInfoCard } from '../LocationInfoCard/LocationInfoCard'
+import styles from './GeoMap.module.css'
 
 const defaultState = { center: [59.94, 30.31], zoom: 12 }
 
-type CoordinatesType = Array<number>
+export type CoordinatesType = Array<number>
 
-type AddressType = {
+export type AddressType = {
 	location: string
 	route: string
 }
@@ -43,13 +45,16 @@ export const GeoMap = () => {
 	}
 
 	return (
-		<Map
-			onClick={(e: MapClickEventType) => handleClickMap(e)}
-			width={'100%'}
-			height={'700px'}
-			defaultState={defaultState}
-		>
-			{coordinates && <Placemark geometry={coordinates} />}
-		</Map>
+		<div className={styles.wrapperMap}>
+			<LocationInfoCard address={address} coordinates={coordinates} />
+			<Map
+				onClick={(e: MapClickEventType) => handleClickMap(e)}
+				width={'auto'}
+				height={'500px'}
+				defaultState={defaultState}
+			>
+				{coordinates && <Placemark geometry={coordinates} />}
+			</Map>
+		</div>
 	)
 }
